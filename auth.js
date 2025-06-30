@@ -5,7 +5,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstati
 // ✅ Replace with your own Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAi5ErvB5aZL5-37Fz-rPTdckQIbSYzVhg",
-  authDomain: "rock-paper-scissors-7700d.firebaseapp.com",
+  authDomain: "dream20006.github.io",
   projectId: "rock-paper-scissors-7700d",
   storageBucket: "rock-paper-scissors-7700d.appspot.com",
   messagingSenderId: "205011769936",
