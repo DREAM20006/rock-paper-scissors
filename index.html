@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rock Paper Scissors</title>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 1.1em;
+      border-radius: 6px;
+      margin: 10px;
+    }
+    #game, #username-setup {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Login -->
+  <div id="login">
+    <h2>Login with Google</h2>
+    <button onclick="googleLogin()">🔐 Login with Google</button>
+  </div>
+
+  <!-- Username Setup -->
+  <div id="username-setup">
+    <h2>Set Your Game Username</h2>
+    <input type="text" id="username-input" placeholder="Choose a username" />
+    <br />
+    <button onclick="saveUsername()">Save & Start</button>
+  </div>
+
+  <!-- Game UI -->
+  <div id="game">
+    <h1>🪨📄✂️ Rock Paper Scissors</h1>
+    <p>Welcome, <span id="player-name"></span>!</p>
+
+    <div class="choices">
+      <button onclick="play('rock')">🪨 Rock</button>
+      <button onclick="play('paper')">📄 Paper</button>
+      <button onclick="play('scissors')">✂️ Scissors</button>
+    </div>
+
+    <div id="result">Choose to begin!</div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
