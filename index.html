@@ -2,69 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rock Paper Scissors - Login</title>
+  <title>Login with Google</title>
   <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    button {
-      padding: 12px 24px;
-      background-color: #fff;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
+    body { background: #111; color: white; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; }
+    button { padding: 12px 24px; font-size: 18px; }
   </style>
 </head>
 <body>
-  <h1>Login with Google</h1>
-  <button id="login-btn">🔐 Login with Google</button>
+  <h2>Login with Google</h2>
+  <button id="loginBtn">🔐 Login with Google</button>
 
-  <script type="module">
-    // Import Firebase modules
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-    // Firebase config
-    const firebaseConfig = {
-      apiKey: "AIzaSyAi5ErvB5aZL5-37Fz-rPTdckQIbSYzVhg",
-      authDomain: "rock-paper-scissors-7700d.firebaseapp.com",
-      projectId: "rock-paper-scissors-7700d",
-      storageBucket: "rock-paper-scissors-7700d.appspot.com",
-      messagingSenderId: "205011769936",
-      appId: "1:205011769936:web:25c8a47bc02a5e7b740f55"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-
-    // Handle login
-    document.getElementById("login-btn").addEventListener("click", () => {
-      signInWithPopup(auth, provider)
-        .then((result) => {
-          const user = result.user;
-          alert(`Welcome, ${user.displayName}!`);
-          // Redirect to game page
-          // window.location.href = "game.html";
-        })
-        .catch((error) => {
-          console.error("Login failed:", error.code, error.message);
-          alert("Login failed: " + error.message);
-        });
-    });
-  </script>
+  <script type="module" src="./auth.js"></script>
 </body>
 </html>
